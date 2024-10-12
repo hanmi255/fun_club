@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/include">
+        <file>Font/ElaAwesome.ttf</file>
+        <file>Image/Cirno.jpg</file>
+        <file>Image/Moon.jpg</file>
+        <file>Image/noise.png</file>
+        <file>Image/MicaBase.png</file>
+        <file>Image/defaultHeadFrame.png</file>
+        <file>Image/Login.jpg</file>
+        <file>Image/Books/ComputerNetWork.png</file>
+        <file>Image/Books/DataStruct.png</file>
+    </qresource>
+</RCC>
