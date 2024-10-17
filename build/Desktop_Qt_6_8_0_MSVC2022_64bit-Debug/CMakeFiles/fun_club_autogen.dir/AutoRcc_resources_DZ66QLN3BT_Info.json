@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/fun_club_autogen",
+	"CMAKE_BINARY_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/Projects_C++/fun_club/fun_club",
+	"CMAKE_SOURCE_DIR" : "E:/Projects_C++/fun_club/fun_club",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/fun_club_autogen/include",
+	"INPUTS" : 
+	[
+		"E:/Projects_C++/fun_club/fun_club/QML/Page.qml",
+		"E:/Projects_C++/fun_club/fun_club/QML/HandwritingItem.qml",
+		"E:/Projects_C++/fun_club/fun_club/QML/main.qml",
+		"E:/Projects_C++/fun_club/fun_club/QML/fonts/satisfy.regular.ttf"
+	],
+	"LOCK_FILE" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/fun_club_autogen.dir/AutoRcc_resources_DZ66QLN3BT_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "DZ66QLN3BT",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "D:/Qt/6.8.0/msvc2022_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/fun_club_autogen.dir/AutoRcc_resources_DZ66QLN3BT_Used.txt",
+	"SOURCE" : "E:/Projects_C++/fun_club/fun_club/QML/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

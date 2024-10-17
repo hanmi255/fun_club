@@ -1,0 +1,36 @@
+{
+	"BUILD_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/fun_club_autogen",
+	"CMAKE_BINARY_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/Projects_C++/fun_club/fun_club",
+	"CMAKE_SOURCE_DIR" : "E:/Projects_C++/fun_club/fun_club",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/fun_club_autogen/include",
+	"INPUTS" : 
+	[
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/Cirno.jpg",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/Moon.jpg",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/noise.png",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/Login.jpg",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/MicaBase.png",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/defaultHeadFrame.png",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/Home/beach.png",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/Home/dream.png",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/Home/classroom.png",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Image/Home/miku.png",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Font/ElaAwesome.ttf",
+		"E:/Projects_C++/fun_club/fun_club/Resource/Font/satisfy.regular.ttf"
+	],
+	"LOCK_FILE" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/fun_club_autogen.dir/AutoRcc_FunClub_SJ56Y4VZUD_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "FunClub" ],
+	"OUTPUT_CHECKSUM" : "SJ56Y4VZUD",
+	"OUTPUT_NAME" : "qrc_FunClub.cpp",
+	"RCC_EXECUTABLE" : "D:/Qt/6.8.0/msvc2022_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/fun_club_autogen.dir/AutoRcc_FunClub_SJ56Y4VZUD_Used.txt",
+	"SOURCE" : "E:/Projects_C++/fun_club/fun_club/Resource/FunClub.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

@@ -1,13 +1,15 @@
 <RCC>
     <qresource prefix="/include">
         <file>Font/ElaAwesome.ttf</file>
+        <file>Image/Home/beach.png</file>
+        <file>Image/Home/classroom.png</file>
+        <file>Image/Home/dream.png</file>
+        <file>Image/Home/miku.png</file>
         <file>Image/Cirno.jpg</file>
-        <file>Image/Moon.jpg</file>
-        <file>Image/noise.png</file>
-        <file>Image/MicaBase.png</file>
         <file>Image/defaultHeadFrame.png</file>
         <file>Image/Login.jpg</file>
-        <file>Image/Books/ComputerNetWork.png</file>
-        <file>Image/Books/DataStruct.png</file>
+        <file>Image/MicaBase.png</file>
+        <file>Image/Moon.jpg</file>
+        <file>Image/noise.png</file>
     </qresource>
 </RCC>

@@ -1,0 +1,35 @@
+{
+	"BUILD_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/fun_club_autogen",
+	"CMAKE_BINARY_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/Projects_C++/fun_club/fun_club",
+	"CMAKE_SOURCE_DIR" : "E:/Projects_C++/fun_club/fun_club",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/fun_club_autogen/include",
+	"INPUTS" : 
+	[
+		"E:/Projects_C++/fun_club/fun_club/include/Image/Cirno.jpg",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/Moon.jpg",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/noise.png",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/Login.jpg",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/MicaBase.png",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/defaultHeadFrame.png",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/Home/beach.png",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/Home/dream.png",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/Home/classroom.png",
+		"E:/Projects_C++/fun_club/fun_club/include/Image/Home/miku.png",
+		"E:/Projects_C++/fun_club/fun_club/include/Font/ElaAwesome.ttf"
+	],
+	"LOCK_FILE" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/CMakeFiles/fun_club_autogen.dir/AutoRcc_ElaWidgetTools_6YEA5652QU_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "ElaWidgetTools" ],
+	"OUTPUT_CHECKSUM" : "6YEA5652QU",
+	"OUTPUT_NAME" : "qrc_ElaWidgetTools.cpp",
+	"RCC_EXECUTABLE" : "D:/Qt/6.7.2/msvc2019_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "E:/Projects_C++/fun_club/fun_club/build/Desktop_Qt_6_7_2_MSVC2019_64bit-Debug/CMakeFiles/fun_club_autogen.dir/AutoRcc_ElaWidgetTools_6YEA5652QU_Used.txt",
+	"SOURCE" : "E:/Projects_C++/fun_club/fun_club/include/ElaWidgetTools.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

@@ -22,7 +22,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(fun_club
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        include/ElaWidgetTools.qrc
         About.h About.cpp
         Result.h
         DataBaseManager.h DataBaseManager.cpp
@@ -30,6 +29,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         UserLogin.h UserLogin.cpp
         Home.h Home.cpp
         T_BasePage.h T_BasePage.cpp
+        Resource/FunClub.qrc
+        Resource/Font/ElaAwesome.ttf
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET fun_club APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/Image">
+        <file>Image/Cirno.jpg</file>
+        <file>Image/defaultHeadFrame.png</file>
+        <file>Image/Login.jpg</file>
+        <file>Image/MicaBase.png</file>
+        <file>Image/Moon.jpg</file>
+        <file>Image/noise.png</file>
+        <file>Image/Home/beach.png</file>
+        <file>Image/Home/classroom.png</file>
+        <file>Image/Home/dream.png</file>
+        <file>Image/Home/miku.png</file>
+    </qresource>
+    <qresource prefix="/Font">
+        <file>Font/ElaAwesome.ttf</file>
+        <file>Font/satisfy.regular.ttf</file>
+    </qresource>
+</RCC>

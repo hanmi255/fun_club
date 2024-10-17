@@ -65,7 +65,7 @@ void MainWindow::initWindow()
         _userLoginPage->show();
     });
 
-    setUserInfoCardPixmap(QPixmap(":/include/Image/defaultHeadFrame.png"));
+    setUserInfoCardPixmap(QPixmap(":/Image/Image/defaultHeadFrame.png"));
     setUserInfoCardTitle("未登录");
     setUserInfoCardSubTitle("这个人很懒，什么都没写~~~");
 
@@ -85,7 +85,7 @@ void MainWindow::initContent()
     _homePage = new Home();
 
     addPageNode("首页", _homePage, ElaIconType::House);
-    addFooterNode("关于我们", nullptr, _aboutKey, 0, ElaIconType::User);
+    addFooterNode("关于我们", nullptr, _aboutKey, 0, ElaIconType::Angel);
     _aboutPage = new About();
     _aboutPage->hide();
     connect(this, &ElaWindow::navigationNodeClicked, this, [=](ElaNavigationType::NavigationNodeType nodeType, QString nodeKey) {
