@@ -22,10 +22,11 @@
 #include <ElaToolBar.h>
 #include <ElaToolButton.h>
 
-#include "UserLogin.h"
-#include "About.h"
-#include "Home.h"
-
+class UserLogin;
+class About;
+class Anime;
+class Home;
+class Setting;
 class MainWindow : public ElaWindow
 {
     Q_OBJECT
@@ -42,9 +43,10 @@ private:
     ElaContentDialog* _closeDialog{ nullptr };
     Home* _homePage{ nullptr };
     About* _aboutPage{ nullptr };
+    Anime* _animePage{ nullptr };
+    Setting* _settingPage{ nullptr };
     UserLogin* _userLoginPage{ nullptr };
-    QString _elaDxgiKey{ "" };
-    QString _viewKey{ "" };
+
     QString _aboutKey{ "" };
     QString _settingKey{ "" };
 

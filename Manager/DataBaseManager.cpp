@@ -23,7 +23,7 @@ Result DataBaseManager::enrollUser(const QString &username, const QString &passw
     QSqlQuery query;
 
     // 检查用户名是否已存在
-    query.prepare("SELECT COUNT(*) FROM users WHERE username = :username");
+    query.prepare("SELECT COUNT(*) FROM user WHERE username = :username");
     query.bindValue(":username", username);
 
     if (!query.exec()) {
@@ -35,7 +35,7 @@ Result DataBaseManager::enrollUser(const QString &username, const QString &passw
     }
 
     // 插入新用户
-    query.prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+    query.prepare("INSERT INTO user (username, password) VALUES (:username, :password)");
     query.bindValue(":username", username);
     query.bindValue(":password", password);
 
@@ -50,7 +50,7 @@ Result DataBaseManager::enrollUser(const QString &username, const QString &passw
 // 登录
 Result DataBaseManager::loginUser(const QString &username, const QString &password) {
     QSqlQuery query;
-    query.prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+    query.prepare("SELECT * FROM user WHERE username = :username AND password = :password");
     query.bindValue(":username", username);
     query.bindValue(":password", password);
 

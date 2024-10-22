@@ -13,6 +13,7 @@ public:
     Result connectToDatabase();
     Result enrollUser(const QString &username, const QString &password);
     Result loginUser(const QString &username, const QString &password);
+
 private:
     QSqlDatabase db;
 };

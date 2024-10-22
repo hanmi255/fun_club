@@ -1,5 +1,10 @@
 #include "mainwindow.h"
+
+#include "UserLogin.h"
+#include "About.h"
+#include "Anime.h"
 #include "Home.h"
+#include "Setting.h"
 
 MainWindow::MainWindow(QWidget* parent)
     : ElaWindow(parent)
@@ -33,6 +38,10 @@ MainWindow::~MainWindow()
 {
     delete this->_aboutPage;
     delete this->_userLoginPage;
+    delete this->_homePage;
+    delete this->_settingPage;
+    delete this->_animePage;
+    delete this->_closeDialog;
 }
 
 //登录成功
@@ -45,17 +54,10 @@ void MainWindow::onLoginSuccessful(const QString& userName)
 //初始化窗口
 void MainWindow::initWindow()
 {
-    // setIsEnableMica(true);
-    // setIsCentralStackedWidgetTransparent(true);
     setWindowTitle("Library System");
 
     setWindowIcon(QIcon(":/include/Image/Cirno.jpg"));
     resize(1200, 740);
-    // ElaLog::getInstance()->initMessageLog(true);
-    // eApp->setThemeMode(ElaThemeType::Dark);
-    // setIsNavigationBarEnable(false);
-    // setNavigationBarDisplayMode(ElaNavigationType::Compact);
-    // setWindowButtonFlag(ElaAppBarType::MinimizeButtonHint, false);
 
     _userLoginPage = new UserLogin();
     _userLoginPage->hide();
@@ -68,9 +70,6 @@ void MainWindow::initWindow()
     setUserInfoCardPixmap(QPixmap(":/Image/Image/defaultHeadFrame.png"));
     setUserInfoCardTitle("未登录");
     setUserInfoCardSubTitle("这个人很懒，什么都没写~~~");
-
-    // setIsStayTop(true);
-    // setUserInfoCardVisible(false);
 }
 
 // 初始化边框
@@ -82,9 +81,13 @@ void MainWindow::initEdgeLayout()
 //初始化内容
 void MainWindow::initContent()
 {
-    _homePage = new Home();
+    _homePage = new Home(this);
+    _animePage = new Anime(this);
+    _settingPage = new Setting(this);
 
     addPageNode("首页", _homePage, ElaIconType::House);
+    addPageNode("动画", _animePage, ElaIconType::CameraMovie);
+
     addFooterNode("关于我们", nullptr, _aboutKey, 0, ElaIconType::Angel);
     _aboutPage = new About();
     _aboutPage->hide();
@@ -97,7 +100,9 @@ void MainWindow::initContent()
         }
     });
 
-    addFooterNode("设置", new QWidget(this), _settingKey, 0, ElaIconType::GearComplex);
+    addFooterNode("设置", _settingPage, _settingKey, 0, ElaIconType::GearComplex);
     connect(this, &MainWindow::userInfoCardClicked, this, [=]() { this->navigation(_homePage->property("ElaPageKey").toString()); });
+    connect(_homePage, &Home::animeNavigation, this, [=](){ this->navigation(_animePage->property("ElaPageKey").toString());});
+
     qDebug() << "已注册的事件列表" << ElaEventBus::getInstance()->getRegisteredEventsName();
 }
