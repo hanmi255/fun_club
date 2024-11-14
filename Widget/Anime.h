@@ -10,15 +10,15 @@ class Anime : public T_BasePage
 {
     Q_OBJECT
 public:
-    Q_INVOKABLE explicit Anime(QWidget* parent = nullptr);
+    Q_INVOKABLE explicit Anime(QWidget *parent = nullptr);
     ~Anime();
 
 protected:
-    bool eventFilter(QObject* obj, QEvent* event) override;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 private:
-    ElaPivot* _weekPivot{nullptr};
-    ElaPromotionView* _promotionView{nullptr};
-    QStackedWidget* _animeStack{nullptr};
+    ElaPivot *_weekPivot{nullptr};
+    ElaPromotionView *_promotionView{nullptr};
+    QStackedWidget *_animeStack{nullptr};
 
 private slots:
     void onPivotClicked(int index);

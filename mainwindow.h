@@ -25,6 +25,9 @@
 class UserLogin;
 class About;
 class Anime;
+class Comic;
+class Game;
+class Music;
 class Home;
 class Setting;
 class MainWindow : public ElaWindow
@@ -32,7 +35,7 @@ class MainWindow : public ElaWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget* parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
     void initWindow();
@@ -40,17 +43,20 @@ public:
     void initContent();
 
 private:
-    ElaContentDialog* _closeDialog{ nullptr };
-    Home* _homePage{ nullptr };
-    About* _aboutPage{ nullptr };
-    Anime* _animePage{ nullptr };
-    Setting* _settingPage{ nullptr };
-    UserLogin* _userLoginPage{ nullptr };
+    ElaContentDialog *_closeDialog{ nullptr };
+    Home *_homePage{ nullptr };
+    About *_aboutPage{ nullptr };
+    Anime *_animePage{ nullptr };
+    Comic *_comicPage{ nullptr };
+    Music *_musicPage{ nullptr };
+    Game *_gamePage{ nullptr };
+    Setting *_settingPage{ nullptr };
+    UserLogin *_userLoginPage{ nullptr };
 
     QString _aboutKey{ "" };
     QString _settingKey{ "" };
 
 private slots:
-    void onLoginSuccessful(const QString& userName);
+    void onLoginSuccessful(const QString &userName);
 };
 #endif // MAINWINDOW_H

@@ -11,8 +11,10 @@
 #include <ElaImageCard.h>
 #include <ElaText.h>
 
-UserLogin::UserLogin(QWidget* parent)
-    : ElaWidget(parent), closeTimer(new QTimer(this)), dbManager(new DataBaseManager())
+UserLogin::UserLogin(QWidget *parent)
+    : ElaWidget(parent),
+    closeTimer(new QTimer(this)),
+    dbManager(new DataBaseManager())
 {
     setWindowTitle("登录");
     setWindowIcon(QIcon(":/Image/Image/Login.jpg"));
@@ -21,14 +23,14 @@ UserLogin::UserLogin(QWidget* parent)
     setWindowModality(Qt::ApplicationModal);
     setWindowButtonFlags(ElaAppBarType::CloseButtonHint);
 
-    QLabel* titleLabel = new QLabel("用户登录", this);
+    QLabel *titleLabel = new QLabel("用户登录", this);
     QFont titleFont = titleLabel->font();
     titleFont.setPointSize(16);
     titleFont.setBold(true);
     titleLabel->setFont(titleFont);
     titleLabel->setAlignment(Qt::AlignCenter);
 
-    QLabel* userNameLabel = new QLabel("用户名", this);
+    QLabel *userNameLabel = new QLabel("用户名", this);
     QFont userNameLabelFont = userNameLabel->font();
     userNameLabelFont.setWeight(QFont::Bold);
     userNameLabel->setFont(userNameLabelFont);
@@ -41,7 +43,7 @@ UserLogin::UserLogin(QWidget* parent)
         userNameEdit->setText(userNameEdit->text().trimmed());
     });
 
-    QLabel* pwdLabel = new QLabel("密码", this);
+    QLabel *pwdLabel = new QLabel("密码", this);
     QFont pwdLabelFont = pwdLabel->font();
     pwdLabelFont.setWeight(QFont::Bold);
     pwdLabel->setFont(pwdLabelFont);
@@ -57,7 +59,7 @@ UserLogin::UserLogin(QWidget* parent)
         pwdEdit->setText(pwdEdit->text().trimmed());
     });
 
-    ElaPushButton* loginButton = new ElaPushButton("登录", this);
+    ElaPushButton *loginButton = new ElaPushButton("登录", this);
     loginButton->setFixedSize(60, 32);
     connect(loginButton, &ElaPushButton::clicked, [=]() {
         login();
@@ -79,12 +81,12 @@ UserLogin::UserLogin(QWidget* parent)
     });
 
     // 创建一个水平布局来包含登录和注册按钮
-    QHBoxLayout* buttonLayout = new QHBoxLayout();
+    QHBoxLayout *buttonLayout = new QHBoxLayout();
     buttonLayout->addWidget(loginButton);
     buttonLayout->addWidget(enrollButton);
     buttonLayout->setSpacing(10); // 调整按钮之间的间隔
 
-    QVBoxLayout* formLayout = new QVBoxLayout();
+    QVBoxLayout *formLayout = new QVBoxLayout();
     formLayout->setSpacing(8);  // 调整控件之间的间隔为 8
     formLayout->addWidget(userNameLabel);
     formLayout->addWidget(userNameEdit);
@@ -93,18 +95,18 @@ UserLogin::UserLogin(QWidget* parent)
     formLayout->addLayout(buttonLayout); // 将水平按钮布局添加到表单布局
     formLayout->setAlignment(Qt::AlignCenter);
 
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(20, 20, 20, 20);
     mainLayout->addWidget(titleLabel, 0, Qt::AlignCenter); // 居中标题
 
     // 添加一个固定大小的占位控件，距离20像素
-    QSpacerItem* topSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
+    QSpacerItem *topSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Fixed);
     mainLayout->addSpacerItem(topSpacer);
 
     mainLayout->addLayout(formLayout, 0); // 居中表单布局
 
     // 添加底部占位符，使内容居中
-    QSpacerItem* bottomSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
+    QSpacerItem *bottomSpacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
     mainLayout->addSpacerItem(bottomSpacer);
 
     setLayout(mainLayout);

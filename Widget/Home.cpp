@@ -16,7 +16,7 @@
 #include <ElaPopularCard.h>
 #include <ElaFlowLayout.h>
 
-Home::Home(QWidget* parent)
+Home::Home(QWidget *parent)
     : T_BasePage(parent),
     _promotionView(new ElaPromotionView(this)),
     _textStack(new QStackedWidget(this)),
@@ -32,17 +32,17 @@ Home::Home(QWidget* parent)
     };
 
     // 创建展示图片
-    for (const QString& imagePath : imagesPath) {
-        ElaPromotionCard* scene = new ElaPromotionCard(this);
+    for (const QString &imagePath : imagesPath) {
+        ElaPromotionCard *scene = new ElaPromotionCard(this);
         scene->setCardPixmap(QPixmap(imagePath));
         _promotionView->appendPromotionCard(scene);
     }
     _promotionView->setIsAutoScroll(true);
 
     // 设置中央布局
-    QWidget* centralWidget = new QWidget(this);
+    QWidget *centralWidget = new QWidget(this);
     centralWidget->setWindowTitle("MIKU`s Life");
-    QVBoxLayout* centerLayout = new QVBoxLayout(centralWidget);
+    QVBoxLayout *centerLayout = new QVBoxLayout(centralWidget);
     centerLayout->setContentsMargins(0, 0, 0, 0);
     centerLayout->setSpacing(20);
 
@@ -74,16 +74,16 @@ Home::Home(QWidget* parent)
     };
 
     // 创建页面并添加到 _textStack
-    for (const PageContent& pageContent : pages) {
-        QWidget* page = new QWidget(this);
-        QVBoxLayout* pageLayout = new QVBoxLayout(page);
+    for (const PageContent &pageContent : pages) {
+        QWidget *page = new QWidget(this);
+        QVBoxLayout *pageLayout = new QVBoxLayout(page);
         pageLayout->setContentsMargins(10, 10, 10, 10); // 设置内边距
 
-        ElaText* title = new ElaText(this);
+        ElaText *title = new ElaText(this);
         title->setText(pageContent.title);
         title->setTextStyle(ElaTextType::Title);
 
-        ElaText* content = new ElaText(this);
+        ElaText *content = new ElaText(this);
         content->setText(pageContent.content);
 
         content->setTextStyle(ElaTextType::Body);
@@ -98,7 +98,7 @@ Home::Home(QWidget* parent)
     _textStack->setCurrentIndex(0);
 
     // toGitHubCard
-    ElaPopularCard* toGitHubCard = new ElaPopularCard(this);
+    ElaPopularCard *toGitHubCard = new ElaPopularCard(this);
     toGitHubCard->setCardButtontext("穿越");
     toGitHubCard->setCardPixmap(QPixmap(":/Image/Image/Home/github.png"));
     toGitHubCard->setTitle("Fun_Club");
@@ -110,7 +110,7 @@ Home::Home(QWidget* parent)
         QDesktopServices::openUrl(QUrl("https://github.com/hanmi255/fun_club"));
     });
 
-    QHBoxLayout* text_cardLayout = new QHBoxLayout();
+    QHBoxLayout *text_cardLayout = new QHBoxLayout();
     text_cardLayout->addWidget(_textStack, 1);
     text_cardLayout->addWidget(toGitHubCard, 2);
 
@@ -180,13 +180,13 @@ Home::Home(QWidget* parent)
     };
 
     // 创建一个流式布局
-    ElaFlowLayout* flowLayout = new ElaFlowLayout(0, 5, 5);
+    ElaFlowLayout *flowLayout = new ElaFlowLayout(0, 5, 5);
     flowLayout->setContentsMargins(100, 0, 0, 0);
     flowLayout->setIsAnimation(true);
 
     // 遍历数据列表，创建卡片并添加到布局
-    for (const PopularCardData& data : cardDataList) {
-        ElaPopularCard* card = new ElaPopularCard(this);
+    for (const PopularCardData &data : cardDataList) {
+        ElaPopularCard *card = new ElaPopularCard(this);
 
         // 设置卡片属性
         card->setCardButtontext(data.buttonText);
@@ -277,8 +277,8 @@ void Home::animatePageChange(int fromIndex, int toIndex)
         return;
     }
 
-    QWidget* fromWidget = _textStack->widget(fromIndex);
-    QWidget* toWidget = _textStack->widget(toIndex);
+    QWidget *fromWidget = _textStack->widget(fromIndex);
+    QWidget *toWidget = _textStack->widget(toIndex);
 
     if (!fromWidget || !toWidget) {
         qWarning() << "animatePageChange 中的页面指针无效";
@@ -289,26 +289,26 @@ void Home::animatePageChange(int fromIndex, int toIndex)
     _isAnimating = true;
 
     // 设置目标页面初始透明度为0并显示
-    QGraphicsOpacityEffect* toEffect = new QGraphicsOpacityEffect(toWidget);
+    QGraphicsOpacityEffect *toEffect = new QGraphicsOpacityEffect(toWidget);
     toWidget->setGraphicsEffect(toEffect);
     toWidget->setVisible(true);
 
-    QPropertyAnimation* fadeIn = new QPropertyAnimation(toEffect, "opacity");
+    QPropertyAnimation *fadeIn = new QPropertyAnimation(toEffect, "opacity");
     fadeIn->setDuration(250);
     fadeIn->setStartValue(0);
     fadeIn->setEndValue(1);
 
     // 设置当前页面淡出
-    QGraphicsOpacityEffect* fromEffect = new QGraphicsOpacityEffect(fromWidget);
+    QGraphicsOpacityEffect *fromEffect = new QGraphicsOpacityEffect(fromWidget);
     fromWidget->setGraphicsEffect(fromEffect);
 
-    QPropertyAnimation* fadeOut = new QPropertyAnimation(fromEffect, "opacity");
+    QPropertyAnimation *fadeOut = new QPropertyAnimation(fromEffect, "opacity");
     fadeOut->setDuration(250);
     fadeOut->setStartValue(1);
     fadeOut->setEndValue(0);
 
     // 创建动画组同时执行
-    QParallelAnimationGroup* group = new QParallelAnimationGroup(this);
+    QParallelAnimationGroup *group = new QParallelAnimationGroup(this);
     group->addAnimation(fadeIn);
     group->addAnimation(fadeOut);
 

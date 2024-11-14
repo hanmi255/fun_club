@@ -10,7 +10,7 @@
 #include <QMouseEvent>
 #include <QDebug>
 
-T_BasePage::T_BasePage(QWidget* parent)
+T_BasePage::T_BasePage(QWidget *parent)
     : ElaScrollPage(parent)
 {
     connect(eTheme, &ElaTheme::themeModeChanged, this, [=]() {
@@ -28,13 +28,13 @@ T_BasePage::~T_BasePage()
 void T_BasePage::createCustomWidget(QString desText)
 {
     // 顶部元素
-    QWidget* customWidget = new QWidget(this);
-    ElaText* subTitleText = new ElaText(this);
+    QWidget *customWidget = new QWidget(this);
+    ElaText *subTitleText = new ElaText(this);
     subTitleText->setText("项目地址：https://github.com/hanmi255/fun_club.git");
     subTitleText->setTextInteractionFlags(Qt::TextSelectableByMouse);
     subTitleText->setTextPixelSize(11);
 
-    QVBoxLayout* topLayout = new QVBoxLayout(customWidget);
+    QVBoxLayout *topLayout = new QVBoxLayout(customWidget);
     topLayout->setContentsMargins(0, 0, 0, 0);
     topLayout->addWidget(subTitleText);
     topLayout->addSpacing(5);

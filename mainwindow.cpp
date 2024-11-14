@@ -2,11 +2,14 @@
 
 #include "UserLogin.h"
 #include "About.h"
-#include "Anime.h"
 #include "Home.h"
+#include "Anime.h"
+#include "Comic.h"
+#include "Game.h"
+#include "Music.h"
 #include "Setting.h"
 
-MainWindow::MainWindow(QWidget* parent)
+MainWindow::MainWindow(QWidget *parent)
     : ElaWindow(parent)
 {
     //初始化窗口
@@ -41,6 +44,7 @@ MainWindow::~MainWindow()
     delete this->_homePage;
     delete this->_settingPage;
     delete this->_animePage;
+    delete this->_gamePage;
     delete this->_closeDialog;
 }
 
@@ -54,7 +58,7 @@ void MainWindow::onLoginSuccessful(const QString& userName)
 //初始化窗口
 void MainWindow::initWindow()
 {
-    setWindowTitle("Library System");
+    setWindowTitle("Fun Club");
 
     setWindowIcon(QIcon(":/include/Image/Cirno.jpg"));
     resize(1200, 740);
@@ -83,10 +87,16 @@ void MainWindow::initContent()
 {
     _homePage = new Home(this);
     _animePage = new Anime(this);
+    _comicPage = new Comic(this);
+    _gamePage = new Game(this);
+    _musicPage = new Music(this);
     _settingPage = new Setting(this);
 
     addPageNode("首页", _homePage, ElaIconType::House);
     addPageNode("动画", _animePage, ElaIconType::CameraMovie);
+    addPageNode("漫画", _comicPage, ElaIconType::GingerbreadMan);
+    addPageNode("游戏", _gamePage, ElaIconType::GamepadModern);
+    addPageNode("音乐", _musicPage, ElaIconType::Music);
 
     addFooterNode("关于我们", nullptr, _aboutKey, 0, ElaIconType::Angel);
     _aboutPage = new About();
@@ -102,7 +112,12 @@ void MainWindow::initContent()
 
     addFooterNode("设置", _settingPage, _settingKey, 0, ElaIconType::GearComplex);
     connect(this, &MainWindow::userInfoCardClicked, this, [=]() { this->navigation(_homePage->property("ElaPageKey").toString()); });
+
+    //导航
     connect(_homePage, &Home::animeNavigation, this, [=](){ this->navigation(_animePage->property("ElaPageKey").toString());});
+    connect(_homePage, &Home::comicNavigation, this, [=](){ this->navigation(_comicPage->property("ElaPageKey").toString());});
+    connect(_homePage, &Home::gameNavigation, this, [=](){ this->navigation(_gamePage->property("ElaPageKey").toString());});
+    connect(_homePage, &Home::musicNavigation, this, [=](){ this->navigation(_musicPage->property("ElaPageKey").toString());});
 
     qDebug() << "已注册的事件列表" << ElaEventBus::getInstance()->getRegisteredEventsName();
 }

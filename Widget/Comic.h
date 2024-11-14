@@ -1,16 +1,16 @@
-#ifndef T_SETTING_H
-#define T_SETTING_H
+#ifndef COMIC_H
+#define COMIC_H
 
 #include "T_BasePage.h"
 class ElaRadioButton;
 class ElaToggleSwitch;
 class ElaComboBox;
-class Setting : public T_BasePage
+class Comic : public T_BasePage
 {
     Q_OBJECT
 public:
-    Q_INVOKABLE explicit Setting(QWidget *parent = nullptr);
-    ~Setting();
+    Q_INVOKABLE explicit Comic(QWidget *parent = nullptr);
+    ~Comic();
 
 private:
     ElaComboBox *_themeComboBox{nullptr};
@@ -21,4 +21,4 @@ private:
     ElaRadioButton *_autoButton{nullptr};
 };
 
-#endif // T_SETTING_H
+#endif // COMIC_H

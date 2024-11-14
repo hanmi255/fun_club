@@ -12,7 +12,7 @@
 #include <ElaPopularCard.h>
 #include <ElaFlowLayout.h>
 
-Anime::Anime(QWidget* parent)
+Anime::Anime(QWidget *parent)
     : T_BasePage(parent),
     _promotionView(new ElaPromotionView(this)),
     _weekPivot(new ElaPivot(this)),
@@ -34,24 +34,24 @@ Anime::Anime(QWidget* parent)
     };
 
     // 创建展示图片
-    for (const QString& imagePath : imagesPath) {
-        ElaPromotionCard* scene = new ElaPromotionCard(this);
+    for (const QString &imagePath : imagesPath) {
+        ElaPromotionCard *scene = new ElaPromotionCard(this);
         scene->setCardPixmap(QPixmap(imagePath));
         _promotionView->appendPromotionCard(scene);
     }
     _promotionView->setIsAutoScroll(true);
 
     // 设置中央布局
-    QWidget* centralWidget = new QWidget(this);
+    QWidget *centralWidget = new QWidget(this);
     centralWidget->setWindowTitle("Anime");
-    QVBoxLayout* centerLayout = new QVBoxLayout(centralWidget);
+    QVBoxLayout *centerLayout = new QVBoxLayout(centralWidget);
     centerLayout->setContentsMargins(0, 0, 0, 0);
     centerLayout->setSpacing(20);
 
     centerLayout->addWidget(_promotionView);
 
     // 时间表
-    ElaText* pivotText = new ElaText("时间表", this);
+    ElaText *pivotText = new ElaText("时间表", this);
     pivotText->setTextPixelSize(18);
     _weekPivot = new ElaPivot(this);
     _weekPivot->setPivotSpacing(15);
@@ -59,13 +59,13 @@ Anime::Anime(QWidget* parent)
     QVector<QString> week = {
         "周一", "周二", "周三", "周四", "周五", "周六", "周日"
     };
-    for(const QString& week : week) {
+    for(const QString &week : week) {
         _weekPivot->appendPivot(week);
     }
     _weekPivot->setCurrentIndex(0);
 
-    ElaScrollPageArea* pivotArea = new ElaScrollPageArea(this);
-    QHBoxLayout* pivotLayout = new QHBoxLayout(pivotArea);
+    ElaScrollPageArea *pivotArea = new ElaScrollPageArea(this);
+    QHBoxLayout *pivotLayout = new QHBoxLayout(pivotArea);
     pivotLayout->addWidget(_weekPivot);
 
     // 连接信号槽
@@ -209,15 +209,15 @@ Anime::Anime(QWidget* parent)
 
     // 创建页面并添加到 _animeStack
     for (const QVector<QString>& animeContent : animeCardPath) {
-        QWidget* animePage = new QWidget(this);
+        QWidget *animePage = new QWidget(this);
 
         // 创建一个流式布局
-        ElaFlowLayout* animeLayout = new ElaFlowLayout(animePage);
+        ElaFlowLayout *animeLayout = new ElaFlowLayout(animePage);
         animeLayout->setContentsMargins(100, 0, 0, 0);
         animeLayout->setIsAnimation(true);
 
-        for (const QString& path : animeContent) {
-            QLabel* card = new QLabel(this);
+        for (const QString &path : animeContent) {
+            QLabel *card = new QLabel(this);
             card->setPixmap(QPixmap(path));
             card->setFixedSize(150, 200);
             card->setScaledContents(true); // 确保图片可以自动缩放适应标签
@@ -231,7 +231,7 @@ Anime::Anime(QWidget* parent)
     }
     _animeStack->setCurrentIndex(0);
 
-    QVBoxLayout* week_AnimeLayout = new QVBoxLayout(this);
+    QVBoxLayout *week_AnimeLayout = new QVBoxLayout(this);
     week_AnimeLayout->addWidget(pivotArea);
     week_AnimeLayout->addWidget(_animeStack, Qt::AlignCenter);
 
@@ -257,7 +257,7 @@ void Anime:: onPivotClicked(int index)
 }
 
 // 过滤器
-bool Anime::eventFilter(QObject* obj, QEvent* event)
+bool Anime::eventFilter(QObject *obj, QEvent *event)
 {
     /**
     * 判断事件类型是否为鼠标按钮按下事件 QEvent::MouseButtonPress。
@@ -267,9 +267,9 @@ bool Anime::eventFilter(QObject* obj, QEvent* event)
     * 返回 true 表示事件已被处理，不再进行默认处理。
     */
     if (event->type() == QEvent::MouseButtonPress) {
-        QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
         if (mouseEvent->button() == Qt::LeftButton) {
-            QLabel* label = qobject_cast<QLabel*>(obj);
+            QLabel *label = qobject_cast<QLabel*>(obj);
             if (label) {
                 QDesktopServices::openUrl(QUrl("https://www.bilibili.com/video/BV1GJ411x7h7"));
                 return true;

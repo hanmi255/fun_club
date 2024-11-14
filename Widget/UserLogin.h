@@ -17,14 +17,14 @@ public:
     ~UserLogin();
 
 private:
-    ElaLineEdit* userNameEdit{ nullptr };
-    ElaLineEdit* pwdEdit{ nullptr };
-    UserEnroll* _userEnrollPage{ nullptr };
-    QTimer* closeTimer{ nullptr };
-    DataBaseManager* dbManager{ nullptr };
+    ElaLineEdit *userNameEdit{ nullptr };
+    ElaLineEdit *pwdEdit{ nullptr };
+    UserEnroll *_userEnrollPage{ nullptr };
+    QTimer *closeTimer{ nullptr };
+    DataBaseManager *dbManager{ nullptr };
 
 Q_SIGNALS:
-    Q_SIGNAL void loginSuccessful(const QString& userName);
+    Q_SIGNAL void loginSuccessful(const QString &userName);
 
 private slots:
     /*

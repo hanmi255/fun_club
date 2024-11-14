@@ -7,7 +7,7 @@ class About : public ElaWidget
 {
     Q_OBJECT
 public:
-    Q_INVOKABLE explicit About(QWidget* parent = nullptr);
+    Q_INVOKABLE explicit About(QWidget *parent = nullptr);
     ~About();
 };
 

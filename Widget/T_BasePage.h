@@ -10,12 +10,12 @@ class T_BasePage : public ElaScrollPage
 {
     Q_OBJECT
 public:
-    explicit T_BasePage(QWidget* parent = nullptr);
+    explicit T_BasePage(QWidget *parent = nullptr);
     ~T_BasePage();
 
 protected:
     void createCustomWidget(QString desText);
-    virtual void resizeEvent(QResizeEvent* event) override;
+    virtual void resizeEvent(QResizeEvent *event) override;
     virtual void mousePressEvent(QMouseEvent *event) override;
 };
 

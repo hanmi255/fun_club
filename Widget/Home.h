@@ -10,12 +10,12 @@ class Home : public T_BasePage
 {
     Q_OBJECT
 public:
-    Q_INVOKABLE explicit Home(QWidget* parent = nullptr);
+    Q_INVOKABLE explicit Home(QWidget *parent = nullptr);
     ~Home();
 
 protected:
-    void resizeEvent(QResizeEvent* event) override;
-    void mousePressEvent(QMouseEvent* event) override;
+    void resizeEvent(QResizeEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 
 private slots:
     void nextPage();
@@ -24,8 +24,8 @@ private slots:
 private:
     void animatePageChange(int fromIndex, int toIndex);
 
-    ElaPromotionView* _promotionView{nullptr};
-    QStackedWidget* _textStack{nullptr};
+    ElaPromotionView *_promotionView{nullptr};
+    QStackedWidget *_textStack{nullptr};
     bool _isAnimating;
 
 Q_SIGNALS:

@@ -1,4 +1,4 @@
-#include "Setting.h"
+#include "Comic.h"
 
 #include <QDebug>
 #include <QHBoxLayout>
@@ -12,11 +12,11 @@
 #include "ElaTheme.h"
 #include "ElaToggleSwitch.h"
 #include "ElaWindow.h"
-Setting::Setting(QWidget *parent)
+Comic::Comic(QWidget *parent)
     : T_BasePage(parent)
 {
     // 预览窗口标题
-    ElaWindow *window = dynamic_cast<ElaWindow *>(parent);
+    ElaWindow *window = dynamic_cast<ElaWindow*>(parent);
     setWindowTitle("Setting");
 
     ElaText *themeText = new ElaText("主题设置", this);
@@ -120,6 +120,7 @@ Setting::Setting(QWidget *parent)
     addCentralWidget(centralWidget, true, true, 0);
 }
 
-Setting::~Setting()
+Comic::~Comic()
 {
+
 }

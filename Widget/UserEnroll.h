@@ -12,14 +12,14 @@ class UserEnroll : public ElaWidget
 {
     Q_OBJECT
 public:
-    Q_INVOKABLE explicit UserEnroll(QWidget* parent = 0);
+    Q_INVOKABLE explicit UserEnroll(QWidget *parent = 0);
     ~UserEnroll();
 
 private:
-    ElaLineEdit* userNameEdit{ nullptr };
-    ElaLineEdit* pwdEdit{ nullptr };
-    QTimer* closeTimer{ nullptr };
-    DataBaseManager* dbManager{ nullptr };
+    ElaLineEdit *userNameEdit{ nullptr };
+    ElaLineEdit *pwdEdit{ nullptr };
+    QTimer *closeTimer{ nullptr };
+    DataBaseManager *dbManager{ nullptr };
 
 private slots:
     /*

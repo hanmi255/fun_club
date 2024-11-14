@@ -60,3 +60,21 @@ Result DataBaseManager::loginUser(const QString &username, const QString &passwo
         return Result(Result::Failure, "用户名或密码错误");
     }
 }
+
+// 获取歌曲数据
+QStandardItemModel *DataBaseManager::getSongData() {
+    QStandardItemModel *model = new QStandardItemModel();
+    model->setHorizontalHeaderLabels({"歌曲名称", "歌手", "专辑", "时长", "文件路径"});
+
+    QSqlQuery query("SELECT title, artist, album, duration, file_path FROM songs");
+
+    while (query.next()) {
+        QList<QStandardItem *> items;
+        for (int i = 0; i < query.record().count(); ++i) {
+            items.append(new QStandardItem(query.value(i).toString()));
+        }
+        model->appendRow(items);
+    }
+
+    return model;
+}

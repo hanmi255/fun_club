@@ -12,8 +12,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find Qt packages
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Sql)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Sql Multimedia Network NetworkAuth WebEngineWidgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql Multimedia Network NetworkAuth WebEngineWidgets)
 
 # Define include directories
 include_directories(include Manager Widget)
@@ -22,6 +22,7 @@ include_directories(include Manager Widget)
 file(GLOB_RECURSE PROJECT_SOURCES
     "Manager/*.h"
     "Manager/*.cpp"
+    "Manager/*.hpp"
     "Widget/*.h"
     "Widget/*.cpp"
     "Resource/FunClub.qrc"
@@ -48,6 +49,10 @@ endif()
 target_link_libraries(fun_club PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Sql
+    Qt${QT_VERSION_MAJOR}::Multimedia
+    Qt${QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::NetworkAuth
+    Qt${QT_VERSION_MAJOR}::WebEngineWidgets
     ${CMAKE_CURRENT_SOURCE_DIR}/lib/elawidgettoolsd.lib
 )
 

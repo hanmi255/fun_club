@@ -18,3 +18,15 @@
 C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.42.34430\bin\Hostx64\x64
 ```
 
+
+
+3.**INVALID_CLIENT: Invalid redirect URI**[使用Spotify的API时]
+
+解决方法：将**Redirect URIs**改为如下形式。port可更改
+
+```
+http://localhost:8000
+```
+
+
+
