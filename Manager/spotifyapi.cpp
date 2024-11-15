@@ -9,7 +9,6 @@ SpotifyAPI::SpotifyAPI(QObject *parent): QObject(parent), m_isAuthenticated(fals
     m_oauth2.setAccessTokenUrl(QUrl("https://accounts.spotify.com/api/token"));
     m_oauth2.setScope("user-top-read");
 
-    //YOUR_Redirect_URIs like http://localhost:8000/
     m_oauth2.setReplyHandler(new QOAuthHttpServerReplyHandler(8000, this));
     m_oauth2.setModifyParametersFunction([&](QAbstractOAuth::Stage stage, QMultiMap<QString, QVariant> *parameters) {
         if(stage == QAbstractOAuth::Stage::RequestingAuthorization) {
@@ -28,8 +27,8 @@ SpotifyAPI::SpotifyAPI(QObject *parent): QObject(parent), m_isAuthenticated(fals
 }
 
 void SpotifyAPI::setCredentials() {
-    m_oauth2.setClientIdentifier("YOUR_Client_ID");
-    m_oauth2.setClientIdentifierSharedKey("YOUR_Client_secret");
+    m_oauth2.setClientIdentifier("f3dc8ba604cd4348acf9634edd607c50");
+    m_oauth2.setClientIdentifierSharedKey("857dc7fdfb2642f78db89806e9828e1a");
 }
 
 void SpotifyAPI::authorize() {

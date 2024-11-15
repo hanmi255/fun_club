@@ -11,6 +11,7 @@
 #include <ElaScrollPageArea.h>
 #include <ElaPopularCard.h>
 #include <ElaFlowLayout.h>
+#include <ElaMessageBar.h>
 
 Anime::Anime(QWidget *parent)
     : T_BasePage(parent),
@@ -272,6 +273,7 @@ bool Anime::eventFilter(QObject *obj, QEvent *event)
             QLabel *label = qobject_cast<QLabel*>(obj);
             if (label) {
                 QDesktopServices::openUrl(QUrl("https://www.bilibili.com/video/BV1GJ411x7h7"));
+                ElaMessageBar::success(ElaMessageBarType::Top, "SUCCESS!", "你被骗了！", 500, this);
                 return true;
             }
         }

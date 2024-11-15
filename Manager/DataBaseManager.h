@@ -5,7 +5,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QSqlRecord>
-#include <QStandardItemModel>
+#include <QSqlTableModel>
 #include "Result.h"
 
 class DataBaseManager
@@ -15,7 +15,7 @@ public:
     Result connectToDatabase();
     Result enrollUser(const QString &username, const QString &password);
     Result loginUser(const QString &username, const QString &password);
-    QStandardItemModel* getSongData();
+    QSqlTableModel* getSongData();
 
 private:
     QSqlDatabase db;

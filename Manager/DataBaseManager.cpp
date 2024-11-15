@@ -62,19 +62,21 @@ Result DataBaseManager::loginUser(const QString &username, const QString &passwo
 }
 
 // 获取歌曲数据
-QStandardItemModel *DataBaseManager::getSongData() {
-    QStandardItemModel *model = new QStandardItemModel();
-    model->setHorizontalHeaderLabels({"歌曲名称", "歌手", "专辑", "时长", "文件路径"});
+QSqlTableModel *DataBaseManager::getSongData() {
+    QSqlTableModel* model = new QSqlTableModel();
+    model->setTable("songs");
 
-    QSqlQuery query("SELECT title, artist, album, duration, file_path FROM songs");
+    // 设置要显示的字段名
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("歌曲名称"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("歌手"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("专辑"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("时长"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("文件路径"));
 
-    while (query.next()) {
-        QList<QStandardItem *> items;
-        for (int i = 0; i < query.record().count(); ++i) {
-            items.append(new QStandardItem(query.value(i).toString()));
-        }
-        model->appendRow(items);
-    }
+    model->select();  // 从数据库中选择数据并填充模型
+
+    // 隐藏文件路径列 (如果不需要在界面显示)
+    model->setHeaderData(4, Qt::Horizontal, QVariant(), Qt::UserRole + 1);
 
     return model;
 }

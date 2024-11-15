@@ -94,7 +94,7 @@ void MainWindow::initContent()
 
     addPageNode("首页", _homePage, ElaIconType::House);
     addPageNode("动画", _animePage, ElaIconType::CameraMovie);
-    addPageNode("漫画", _comicPage, ElaIconType::GingerbreadMan);
+    // addPageNode("漫画", _comicPage, ElaIconType::GingerbreadMan);
     addPageNode("游戏", _gamePage, ElaIconType::GamepadModern);
     addPageNode("音乐", _musicPage, ElaIconType::Music);
 
@@ -115,7 +115,7 @@ void MainWindow::initContent()
 
     //导航
     connect(_homePage, &Home::animeNavigation, this, [=](){ this->navigation(_animePage->property("ElaPageKey").toString());});
-    connect(_homePage, &Home::comicNavigation, this, [=](){ this->navigation(_comicPage->property("ElaPageKey").toString());});
+    // connect(_homePage, &Home::comicNavigation, this, [=](){ this->navigation(_comicPage->property("ElaPageKey").toString());});
     connect(_homePage, &Home::gameNavigation, this, [=](){ this->navigation(_gamePage->property("ElaPageKey").toString());});
     connect(_homePage, &Home::musicNavigation, this, [=](){ this->navigation(_musicPage->property("ElaPageKey").toString());});
 

@@ -20,13 +20,14 @@ C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.42.34430\
 
 
 
-3.**INVALID_CLIENT: Invalid redirect URI**[使用Spotify的API时]
+**3.QMediaPlayer 无法正常播放**
+      解决方法：在CMakeLists中引入MultimediaWidgets
 
-解决方法：将**Redirect URIs**改为如下形式。port可更改
+```c++
+#include <QAudioOutput>
 
+player->setAudioOutput(audiooutput);
+        player->setSource(QUrl(url));
+        player->play();
 ```
-http://localhost:8000
-```
-
-
 
