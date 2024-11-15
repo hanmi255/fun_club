@@ -1,7 +1,5 @@
 **1.在窗口未实现而使用导航指向**
 
-![4afc04512bcbdd4442147abe0a10fab9](C:\Users\asus\Documents\Tencent Files\1935495445\nt_qq\nt_data\Pic\2024-10\Ori\4afc04512bcbdd4442147abe0a10fab9.png)
-
 解决方法：实现窗口内容
 
 
